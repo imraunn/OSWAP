@@ -1,0 +1,88 @@
+version: '3.1'
+services:
+    level_0:
+        container_name: level_0
+        image: php:8.0-apache
+        volumes:
+            - ./level_0:/var/www/html/
+        ports:
+            - 10000:80
+    level_1:
+        container_name: level_1
+        image: php:8.0-apache
+        volumes:
+            - ./level_1:/var/www/html/
+        ports:
+            - 10001:80
+    level_2:
+        container_name: level_2
+        image: php:8.0-apache
+        volumes:
+            - ./level_2:/var/www/html/
+        ports:
+            - 10002:80
+    level_3:
+        container_name: level_3
+        image: php:8.0-apache
+        volumes:
+            - ./level_3:/var/www/html/
+        ports:
+            - 10003:80
+    level_4:
+        container_name: level_4
+        image: php:8.0-apache
+        volumes:
+            - ./level_4:/var/www/html/
+        ports:
+            - 10004:80
+    level_5:
+        container_name: level_5
+        image: php:8.0-apache
+        volumes:
+            - ./level_5:/var/www/html/
+        ports:
+            - 10005:80
+    level_6:
+        container_name: level_6
+        image: php:8.0-apache
+        volumes:
+            - ./level_6:/var/www/html/
+        ports:
+            - 10006:80
+    level_7:
+        container_name: level_7
+        image: php:8.0-apache
+        volumes:
+            - ./level_7:/var/www/html/
+        ports:
+            - 10007:80
+    level_11:
+        container_name: level_11
+        image: php:8.0-apache
+        volumes:
+            - ./level_11:/var/www/html/
+        ports:
+            - 10011:80
+    level_17:
+        container_name: level_17
+        image: php:8.0-apache
+        volumes:
+            - ./level_17:/var/www/html/
+        ports:
+            - 10017:80
+    level_23:
+        container_name: level_23
+        image: php:8.0-apache
+        volumes:
+            - ./level_23:/var/www/html/
+        ports:
+            - 10023:80
+    level_24:
+        container_name: level_24
+        build:
+            context: ./level_24/
+            dockerfile: Dockerfile
+        ports:
+            - 10024:5000
+        volumes:
+            - ./level_24:/app

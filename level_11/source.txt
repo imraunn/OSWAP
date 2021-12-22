@@ -1,0 +1,20 @@
+<?php
+                    include 'flag.php';
+                    if(isset($_POST["password"])){
+                        $input=$_POST["password"];
+                    }
+                    $password="cyberlabs_9Wu4RUuK=))ZuH<fdT;*";
+                    if(isset($input)){
+                        if($input===$password){
+                            echo("Lmao! n00b");
+                        }
+                        else{
+                            if(md5($input)==md5($password)){
+                                echo($flag);
+                            }
+                            else{
+                                echo("Bruh!");
+                            }
+                        }
+                    }
+                ?>
