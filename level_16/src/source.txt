@@ -1,0 +1,17 @@
+<?php
+    if(!empty($_GET["pass"])){
+        $text=htmlentities($_GET["pass"]);
+        if (!preg_match("[;|&|`|\||\*]",$text)){
+            if(!preg_match("/flag/i",$text)){
+                $output=htmlentities(shell_exec("ls -la $text 2>&1"));
+                echo $output;
+            }
+            else{
+                echo "Oops! I'm sorry to tell you. You can't read the flag :)";
+            }
+        }
+        else{
+            echo "Do not Hack Me!";
+        }
+    }
+?>

@@ -1,0 +1,14 @@
+<?php
+    include "flag.php";
+    if(!empty($_POST["pass"])){
+        $password=htmlentities($_POST["pass"]);
+        $to_check="62444e6d58327777614639304d476466646d64665a585a306457636849513d3d";
+        $converted=bin2hex(base64_encode(str_rot13($password)));
+        if(strcmp($to_check,$converted)==0){
+            echo $flag;
+        }
+        else{
+            echo "Incorrect!";
+        }
+    }
+?>

@@ -1,0 +1,51 @@
+<?php
+    $defaultdata=array("flag"=>"no");
+
+    function xor_encrypt($in){
+        $key=<REDACTED>;
+        $text=$in;
+        $out='';
+        for($i=0;$i<strlen($text);$i++){
+            $out .=$text[$i]^$key[$i % strlen($key)];
+        }
+        return $out;
+    }
+
+    function load($data){
+        global $_COOKIE;
+        $mydata = $data;
+        if(array_key_exists("getFlag", $_COOKIE)){
+            $temp=json_decode(xor_encrypt(base64_decode($_COOKIE["getFlag"])), true);
+            if(is_array($temp) && array_key_exists("flag", $temp)){
+                $mydata['flag']=$temp['flag'];
+            }
+        }
+        return $mydata;
+    }
+
+    function save($data){
+        setcookie("getFlag", base64_encode(xor_encrypt(json_encode($data))));
+    }
+    
+    $data=load($defaultdata);
+    save($data);
+?>
+
+<?php
+    function giveflag(){
+        include "flag.php";
+        $data=json_decode(xor_encrypt(base64_decode($_COOKIE["getFlag"])), true);
+        if(strcmp($data["flag"],"yes")==0){
+            echo $flag;
+        }
+        else if(!empty($_GET["n00b"])){
+            if(strcmp($_GET["n00b"],"yes")==0){
+                echo "As I said, don't be a n00b :)";
+            }
+            else if(strcmp($_GET["n00b"],"no")==0){
+                echo "Are you sure?";
+            }
+        }
+    }
+    giveflag();
+?>
