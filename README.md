@@ -53,6 +53,5 @@ docker-compose up --build
 bash clean_container.sh
 ```
 
+
 This project was done as an endeavour by Infosec CyberLabs 2024 under the mentorship of :fire: [@Masrt200](https://github.com/masrt200/) and [@naughtyboy191](https://github.com/naughtyboy191)
-
-
