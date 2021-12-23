@@ -64,7 +64,7 @@
                         $user=$_POST["username"];
                         $pass=$_POST["password"];
 
-                        $con=mysqli_connect("db_level_9","cyber","cyberishere","cyberlabs") or die(mysql_error());
+                        $con=mysqli_connect("db_level_09","cyber","cyberishere","cyberlabs") or die(mysql_error());
 
                         $query=mysqli_query($con, "SELECT * FROM user WHERE username='".$user."' AND password='".$pass."'");
 
