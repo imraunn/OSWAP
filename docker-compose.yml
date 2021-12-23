@@ -7,7 +7,7 @@ services:
         cap_add:
             - SYS_NICE
         volumes:
-            - ./empty_db:/docker-entrypoint-initdb.d
+            - ./python_flag/db:/docker-entrypoint-initdb.d
         environment:
             MYSQL_ROOT_PASSWORD: r00t_p@$$w0rd
             MYSQL_DATABASE: flag_storage
@@ -32,7 +32,7 @@ services:
         depends_on:
             - db_flag
         volumes:
-            - ./python_flag:/opt
+            - ./python_flag/src:/opt
         command: bash -c "
             sleep 30 &&
             python /opt/flag_gen.py oswap && 
