@@ -40,14 +40,14 @@ services:
             echo '*/1 * * * * root python /opt/flag_gen.py oswap' >> /etc/crontab && 
             tail -f /dev/null"
 
-    level_0:
-        container_name: level_0
+    level_00:
+        container_name: level_00
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_0/src:/var/www/html/
-            - ./level_0/cron:/root/cron
+            - ./level_00/src:/var/www/html/
+            - ./level_00/cron:/root/cron
         ports:
             - 10000:80
         command: bash -c "
@@ -59,14 +59,14 @@ services:
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
 
-    level_1:
-        container_name: level_1
+    level_01:
+        container_name: level_01
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_1/src:/var/www/html/
-            - ./level_1/cron:/root/cron
+            - ./level_01/src:/var/www/html/
+            - ./level_01/cron:/root/cron
         ports:
             - 10001:80
         command: bash -c "
@@ -78,14 +78,14 @@ services:
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
 
-    level_2:
-        container_name: level_2
+    level_02:
+        container_name: level_02
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_2/src:/var/www/html/
-            - ./level_2/cron:/root/cron
+            - ./level_02/src:/var/www/html/
+            - ./level_02/cron:/root/cron
         ports:
             - 10002:80
         command: bash -c "
@@ -97,14 +97,14 @@ services:
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
 
-    level_3:
-        container_name: level_3
+    level_03:
+        container_name: level_03
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_3/src:/var/www/html/
-            - ./level_3/cron:/root/cron
+            - ./level_03/src:/var/www/html/
+            - ./level_03/cron:/root/cron
         ports:
             - 10003:80
         command: bash -c "
@@ -116,14 +116,14 @@ services:
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
 
-    level_4:
-        container_name: level_4
+    level_04:
+        container_name: level_04
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_4/src:/var/www/html/
-            - ./level_4/cron:/root/cron
+            - ./level_04/src:/var/www/html/
+            - ./level_04/cron:/root/cron
         ports:
             - 10004:80
         command: bash -c "
@@ -135,14 +135,14 @@ services:
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
 
-    level_5:
-        container_name: level_5
+    level_05:
+        container_name: level_05
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_5/src:/var/www/html/
-            - ./level_5/cron:/root/cron
+            - ./level_05/src:/var/www/html/
+            - ./level_05/cron:/root/cron
         ports:
             - 10005:80
         command: bash -c "
@@ -154,14 +154,14 @@ services:
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
 
-    level_6:
-        container_name: level_6
+    level_06:
+        container_name: level_06
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_6/src:/var/www/html/
-            - ./level_6/cron:/root/cron
+            - ./level_06/src:/var/www/html/
+            - ./level_06/cron:/root/cron
         ports:
             - 10006:80
         command: bash -c "
@@ -173,14 +173,14 @@ services:
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
 
-    level_7:
-        container_name: level_7
+    level_07:
+        container_name: level_07
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_7/src:/var/www/html/
-            - ./level_7/cron:/root/cron
+            - ./level_07/src:/var/www/html/
+            - ./level_07/cron:/root/cron
         ports:
             - 10007:80
         command: bash -c "
@@ -192,14 +192,14 @@ services:
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
 
-    level_8:
-        container_name: level_8
+    level_08:
+        container_name: level_08
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_8/src:/var/www/html/
-            - ./level_8/cron:/root/cron
+            - ./level_08/src:/var/www/html/
+            - ./level_08/cron:/root/cron
         ports:
             - 10008:80
         command: bash -c "
@@ -211,15 +211,15 @@ services:
             php /root/cron/cron.php &&
             tail -f /dev/null"
 
-    level_9:
-        container_name: level_9
+    level_09:
+        container_name: level_09
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
-            - db_level_9
+            - db_level_09
         volumes:
-            - ./level_9/src:/var/www/html/
-            - ./level_9/cron:/root/cron
+            - ./level_09/src:/var/www/html/
+            - ./level_09/cron:/root/cron
         ports:
             - 10009:80
         command: bash -c "
@@ -231,29 +231,29 @@ services:
             php /root/cron/cron.php &&
             tail -f /dev/null"
 
-    db_level_9:
-        container_name: db_level_9
+    db_level_09:
+        container_name: db_level_09
         image: mysql
         restart: always
         cap_add:
             - SYS_NICE
         volumes:
-            - ./level_9/db/:/docker-entrypoint-initdb.d
+            - ./level_09/db/:/docker-entrypoint-initdb.d
         environment:
             MYSQL_ROOT_PASSWORD: r00t_p@$$w0rd
             MYSQL_DATABASE: cyberlabs
             MYSQL_USER: cyber
             MYSQL_PASSWORD: cyberishere
 
-    phpmyadmin_level_9:
+    phpmyadmin_level_09:
         image: phpmyadmin/phpmyadmin
         ports:
             - '8009:80'
         restart: always
         environment:
-            PMA_HOST: db_level_9
+            PMA_HOST: db_level_09
         depends_on:
-            - db_level_9
+            - db_level_09
 
     level_10:
         container_name: level_10
