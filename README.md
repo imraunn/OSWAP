@@ -2,7 +2,7 @@
 
 ## A dockerized-repository containing challenges made with :heart: by
 - [@himanshudas75](https://github.com/himanshudas75)
-- [@justanothern00b](https://github.com/justanothern00b)
+- [@imraunn](https://github.com/imraunn)
 - [@sudoshreyansh](https://github.com/sudoshreyansh)
 
 ## Features:
@@ -39,7 +39,7 @@ The docker-compose.yml manages all the instances, cronjobs, ports
 ## Installation steps:
 
 ```bash 
-git clone https://github.com/justanothern00b/OSWAP
+git clone https://github.com/imraunn/OSWAP
 ```
 ```bash
 cd OSWAP
