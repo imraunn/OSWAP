@@ -1,0 +1,18 @@
+<?php
+    include "flag.php";
+    if(!empty($_POST["username"])){
+        $user=$_POST["username"];
+        $pass=$_POST["password"];
+
+        $con=mysqli_connect(HOSTNAME,USERNAME,PASSWORD,DATABASE) or die(mysql_error());
+
+        $query=mysqli_query($con, "SELECT * FROM user WHERE username='".$user."' AND password='".$pass."'");
+
+        if(mysqli_num_rows($query)!=0){
+            echo $flag;
+        }
+        else{
+            echo "Invalid username or password";
+        }
+    }
+?>

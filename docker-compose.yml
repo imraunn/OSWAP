@@ -34,155 +34,227 @@ services:
         volumes:
             - ./python_flag/src:/opt
         command: bash -c "
-            sleep 30 &&
+            sleep 60 &&
             python /opt/flag_gen.py oswap && 
             service cron start && 
             echo '*/1 * * * * root python /opt/flag_gen.py oswap' >> /etc/crontab && 
             tail -f /dev/null"
-    level_0:
-        container_name: level_0
+
+    level_00:
+        container_name: level_00
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_0/src:/var/www/html/
-            - ./level_0/cron:/root/cron
+            - ./level_00/src:/var/www/html/
+            - ./level_00/cron:/root/cron
         ports:
             - 10000:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
-    level_1:
-        container_name: level_1
+
+    level_01:
+        container_name: level_01
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_1/src:/var/www/html/
-            - ./level_1/cron:/root/cron
+            - ./level_01/src:/var/www/html/
+            - ./level_01/cron:/root/cron
         ports:
             - 10001:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
-    level_2:
-        container_name: level_2
+
+    level_02:
+        container_name: level_02
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_2/src:/var/www/html/
-            - ./level_2/cron:/root/cron
+            - ./level_02/src:/var/www/html/
+            - ./level_02/cron:/root/cron
         ports:
             - 10002:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
-    level_3:
-        container_name: level_3
+
+    level_03:
+        container_name: level_03
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_3/src:/var/www/html/
-            - ./level_3/cron:/root/cron
+            - ./level_03/src:/var/www/html/
+            - ./level_03/cron:/root/cron
         ports:
             - 10003:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
-    level_4:
-        container_name: level_4
+
+    level_04:
+        container_name: level_04
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_4/src:/var/www/html/
-            - ./level_4/cron:/root/cron
+            - ./level_04/src:/var/www/html/
+            - ./level_04/cron:/root/cron
         ports:
             - 10004:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
-    level_5:
-        container_name: level_5
+
+    level_05:
+        container_name: level_05
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_5/src:/var/www/html/
-            - ./level_5/cron:/root/cron
+            - ./level_05/src:/var/www/html/
+            - ./level_05/cron:/root/cron
         ports:
             - 10005:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
-    level_6:
-        container_name: level_6
+
+    level_06:
+        container_name: level_06
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_6/src:/var/www/html/
-            - ./level_6/cron:/root/cron
+            - ./level_06/src:/var/www/html/
+            - ./level_06/cron:/root/cron
         ports:
             - 10006:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
-    level_7:
-        container_name: level_7
+
+    level_07:
+        container_name: level_07
         image: himanshudas75/php-apache-mysql-cron:v2
         depends_on:
             - python_flag
         volumes:
-            - ./level_7/src:/var/www/html/
-            - ./level_7/cron:/root/cron
+            - ./level_07/src:/var/www/html/
+            - ./level_07/cron:/root/cron
         ports:
             - 10007:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
+
+    level_08:
+        container_name: level_08
+        image: himanshudas75/php-apache-mysql-cron:v2
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_08/src:/var/www/html/
+            - ./level_08/cron:/root/cron
+        ports:
+            - 10008:80
+        command: bash -c "
+            sleep 70 &&
+            apachectl restart && 
+            chmod 640 /root/cron/cron.php && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab &&
+            php /root/cron/cron.php &&
+            tail -f /dev/null"
+
+    level_09:
+        container_name: level_09
+        image: himanshudas75/php-apache-mysql-cron:v2
+        depends_on:
+            - python_flag
+            - db_level_09
+        volumes:
+            - ./level_09/src:/var/www/html/
+            - ./level_09/cron:/root/cron
+        ports:
+            - 10009:80
+        command: bash -c "
+            sleep 70 &&
+            apachectl restart && 
+            chmod 640 /root/cron/cron.php && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            php /root/cron/cron.php &&
+            tail -f /dev/null"
+
+    db_level_09:
+        container_name: db_level_09
+        image: mysql
+        restart: always
+        cap_add:
+            - SYS_NICE
+        volumes:
+            - ./level_09/db/:/docker-entrypoint-initdb.d
+        environment:
+            MYSQL_ROOT_PASSWORD: r00t_p@$$w0rd
+            MYSQL_DATABASE: cyberlabs
+            MYSQL_USER: cyber
+            MYSQL_PASSWORD: cyberishere
+
+    phpmyadmin_level_09:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - '8009:80'
+        restart: always
+        environment:
+            PMA_HOST: db_level_09
+        depends_on:
+            - db_level_09
+
     level_10:
         container_name: level_10
         image: himanshudas75/php-apache-mysql-cron:v2
@@ -194,13 +266,14 @@ services:
         ports:
             - 10010:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
+
     level_12:
         container_name: level_12
         image: himanshudas75/php-apache-mysql-cron:v2
@@ -212,13 +285,90 @@ services:
         ports:
             - 10012:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
+    
+    level_13:
+        container_name: level_13
+        image: himanshudas75/php-apache-mysql-cron:v2
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_13/src:/var/www/html/
+            - ./level_13/cron:/root/cron
+        ports:
+            - 10013:80
+        command: bash -c "
+            sleep 70 &&
+            apachectl restart && 
+            chmod 640 /root/cron/cron.php && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            php /root/cron/cron.php &&
+            tail -f /dev/null"
+    
+    level_15:
+        container_name: level_15
+        image: himanshudas75/php-apache-mysql-cron:v2
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_15/src:/var/www/html/
+            - ./level_15/cron:/root/cron
+        ports:
+            - 10015:80
+        command: bash -c "
+            sleep 70 &&
+            apachectl restart && 
+            chmod 640 /root/cron/cron.php && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            php /root/cron/cron.php &&
+            tail -f /dev/null"
+    
+    level_16:
+        container_name: level_16
+        image: himanshudas75/php-apache-mysql-cron:v2
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_16/src:/var/www/html/
+            - ./level_16/cron:/root/cron
+        ports:
+            - 10016:80
+        command: bash -c "
+            sleep 70 &&
+            apachectl restart && 
+            chmod 640 /root/cron/cron.php && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            php /root/cron/cron.php &&
+            tail -f /dev/null"
+    
+    level_20:
+        container_name: level_20
+        image: himanshudas75/php-apache-mysql-cron:v2
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_20/src:/var/www/html/
+            - ./level_20/cron:/root/cron
+        ports:
+            - 10020:80
+        command: bash -c "
+            sleep 70 &&
+            apachectl restart && 
+            chmod 640 /root/cron/cron.php && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            php /root/cron/cron.php &&
+            tail -f /dev/null"
+
     level_21:
         container_name: level_21
         image: himanshudas75/php-apache-mysql-cron:v2
@@ -230,11 +380,99 @@ services:
         ports:
             - 10021:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
+    
+    level_23:
+        container_name: level_23
+        image: himanshudas75/php-apache-mysql-cron:v2
+        depends_on:
+            - python_flag
+            - db_level_23
+        volumes:
+            - ./level_23/src:/var/www/html/
+            - ./level_23/cron:/root/cron
+        ports:
+            - 10023:80
+        command: bash -c "
+            sleep 70 &&
+            apachectl restart && 
+            chmod 640 /root/cron/cron.php && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            php /root/cron/cron.php &&
+            tail -f /dev/null"
+    
+    db_level_23:
+        container_name: db_level_23
+        image: mysql
+        restart: always
+        cap_add:
+            - SYS_NICE
+        volumes:
+            - ./level_23/db/:/docker-entrypoint-initdb.d
+        environment:
+            MYSQL_ROOT_PASSWORD: r00t_p@$$w0rd
+            MYSQL_DATABASE: members
+            MYSQL_USER: cyber
+            MYSQL_PASSWORD: cyberishere
+    
+    phpmyadmin_level_23:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - '8023:80'
+        restart: always
+        environment:
+            PMA_HOST: db_level_23
+        depends_on:
+            - db_level_23
+    
+    level_24:
+        container_name: level_24
+        image: himanshudas75/php-apache-mysql-cron:v2
+        depends_on:
+            - python_flag
+            - db_level_24
+        volumes:
+            - ./level_24/src:/var/www/html/
+            - ./level_24/cron:/root/cron
+        ports:
+            - 10024:80
+        command: bash -c "
+            sleep 70 &&
+            apachectl restart && 
+            chmod 640 /root/cron/cron.php && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            php /root/cron/cron.php &&
+            tail -f /dev/null"
+    
+    db_level_24:
+        container_name: db_level_24
+        image: mysql
+        restart: always
+        cap_add:
+            - SYS_NICE
+        volumes:
+            - ./level_24/db/:/docker-entrypoint-initdb.d
+        environment:
+            MYSQL_ROOT_PASSWORD: r00t_p@$$w0rd
+            MYSQL_DATABASE: zoo
+            MYSQL_USER: cyber
+            MYSQL_PASSWORD: cyberishere
+    
+    phpmyadmin_level_24:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - '8024:80'
+        restart: always
+        environment:
+            PMA_HOST: db_level_24
+        depends_on:
+            - db_level_24
 
