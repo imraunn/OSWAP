@@ -1,0 +1,288 @@
+version: '3.1'
+services:
+
+    db_flag:
+        container_name: db_flag
+        image: mysql
+        restart: always
+        cap_add:
+            - SYS_NICE
+        volumes:
+            - ./empty_db:/docker-entrypoint-initdb.d
+        environment:
+            MYSQL_ROOT_PASSWORD: r00t_p@$$w0rd
+            MYSQL_DATABASE: flag_storage
+            MYSQL_USER: cyberlabs
+            MYSQL_PASSWORD: CYB3RL4BS_!!FLAgs!
+        ports:
+            - "9000:3306"
+    
+    phpmyadmin_flag:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - '9001:80'
+        restart: always
+        environment:
+            PMA_HOST: db_flag
+        depends_on:
+            - db_flag
+    
+    python_flag:
+        container_name: python_flag
+        image: python:3.9.1
+        depends_on:
+            - db_flag
+        volumes:
+            - ./python_flag:/opt
+        command: bash -c "
+            sleep 20 && 
+            apt update -y && 
+            apt install cron -y && 
+            pip install -r /opt/requirements.txt && 
+            python /opt/flag_gen.py oswap && 
+            service cron start && 
+            echo '*/1 * * * * root python /opt/flag_gen.py oswap' >> /etc/crontab && 
+            tail -f /dev/null"
+    
+    level_0:
+        container_name: level_0
+        image: php:8.0-apache
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_0/src:/var/www/html/
+            - ./level_0/cron:/root/cron
+        ports:
+            - 10000:80
+        command: bash -c "
+            apt update -y && 
+            docker-php-ext-install mysqli && 
+            docker-php-ext-enable mysqli && 
+            apachectl restart && 
+            apt install cron -y && 
+            chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php && 
+            service apache2 start && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            tail -f /dev/null"
+    level_1:
+        container_name: level_1
+        image: php:8.0-apache
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_1/src:/var/www/html/
+            - ./level_1/cron:/root/cron
+        ports:
+            - 10001:80
+        command: bash -c "
+            apt update -y && 
+            docker-php-ext-install mysqli && 
+            docker-php-ext-enable mysqli && 
+            apachectl restart && 
+            apt install cron -y && 
+            chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php && 
+            service apache2 start && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab &&
+            tail -f /dev/null"
+    level_2:
+        container_name: level_2
+        image: php:8.0-apache
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_2/src:/var/www/html/
+            - ./level_2/cron:/root/cron
+        ports:
+            - 10002:80
+        command: bash -c "
+            apt update -y && 
+            docker-php-ext-install mysqli && 
+            docker-php-ext-enable mysqli && 
+            apachectl restart && 
+            apt install cron -y && 
+            chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php && 
+            service apache2 start && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            tail -f /dev/null"
+    level_3:
+        container_name: level_3
+        image: php:8.0-apache
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_3/src:/var/www/html/
+            - ./level_3/cron:/root/cron
+        ports:
+            - 10003:80
+        command: bash -c "
+            apt update -y && 
+            docker-php-ext-install mysqli && 
+            docker-php-ext-enable mysqli && 
+            apachectl restart && 
+            apt install cron -y && 
+            chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php && 
+            service apache2 start && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            tail -f /dev/null"
+    level_4:
+        container_name: level_4
+        image: php:8.0-apache
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_4/src:/var/www/html/
+            - ./level_4/cron:/root/cron
+        ports:
+            - 10004:80
+        command: bash -c "
+            apt update -y && 
+            docker-php-ext-install mysqli && 
+            docker-php-ext-enable mysqli && 
+            apachectl restart && 
+            apt install cron -y && 
+            chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php && 
+            service apache2 start && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab &&
+            tail -f /dev/null"
+    level_5:
+        container_name: level_5
+        image: php:8.0-apache
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_5/src:/var/www/html/
+            - ./level_5/cron:/root/cron
+        ports:
+            - 10005:80
+        command: bash -c "
+            apt update -y && 
+            docker-php-ext-install mysqli && 
+            docker-php-ext-enable mysqli && 
+            apachectl restart && 
+            apt install cron -y && 
+            chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php && 
+            service apache2 start && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab &&
+            tail -f /dev/null"
+    level_6:
+        container_name: level_6
+        image: php:8.0-apache
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_6/src:/var/www/html/
+            - ./level_6/cron:/root/cron
+        ports:
+            - 10006:80
+        command: bash -c "
+            apt update -y && 
+            docker-php-ext-install mysqli && 
+            docker-php-ext-enable mysqli && 
+            apachectl restart && 
+            apt install cron -y && 
+            chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php && 
+            service apache2 start && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            tail -f /dev/null"
+    level_7:
+        container_name: level_7
+        image: php:8.0-apache
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_7/src:/var/www/html/
+            - ./level_7/cron:/root/cron
+        ports:
+            - 10007:80
+        command: bash -c "
+            apt update -y && 
+            docker-php-ext-install mysqli && 
+            docker-php-ext-enable mysqli && 
+            apachectl restart && 
+            apt install cron -y && 
+            chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php && 
+            service apache2 start && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab &&
+            tail -f /dev/null"
+    level_10:
+        container_name: level_10
+        image: php:8.0-apache
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_10/src:/var/www/html/
+            - ./level_10/cron:/root/cron
+        ports:
+            - 10010:80
+        command: bash -c "
+            apt update -y && 
+            docker-php-ext-install mysqli && 
+            docker-php-ext-enable mysqli && 
+            apachectl restart && 
+            apt install cron -y && 
+            chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php && 
+            service apache2 start && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            tail -f /dev/null"
+    level_12:
+        container_name: level_12
+        image: php:8.0-apache
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_12/src:/var/www/html/
+            - ./level_12/cron:/root/cron
+        ports:
+            - 10012:80
+        command: bash -c "
+            apt update -y && 
+            docker-php-ext-install mysqli && 
+            docker-php-ext-enable mysqli && 
+            apachectl restart && 
+            apt install cron -y && 
+            chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php && 
+            service apache2 start && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            tail -f /dev/null"
+    level_21:
+        container_name: level_21
+        image: php:8.0-apache
+        depends_on:
+            - python_flag
+        volumes:
+            - ./level_21/src:/var/www/html/
+            - ./level_21/cron:/root/cron
+        ports:
+            - 10021:80
+        command: bash -c "
+            apt update -y && 
+            docker-php-ext-install mysqli && 
+            docker-php-ext-enable mysqli && 
+            apachectl restart && 
+            apt install cron -y && 
+            chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php && 
+            service apache2 start && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
+            tail -f /dev/null"
