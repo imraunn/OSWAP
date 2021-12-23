@@ -34,7 +34,7 @@ services:
         volumes:
             - ./python_flag/src:/opt
         command: bash -c "
-            sleep 30 &&
+            sleep 60 &&
             python /opt/flag_gen.py oswap && 
             service cron start && 
             echo '*/1 * * * * root python /opt/flag_gen.py oswap' >> /etc/crontab && 
@@ -51,7 +51,7 @@ services:
         ports:
             - 10000:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
@@ -70,7 +70,7 @@ services:
         ports:
             - 10001:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
@@ -89,7 +89,7 @@ services:
         ports:
             - 10002:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
@@ -108,7 +108,7 @@ services:
         ports:
             - 10003:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
@@ -127,7 +127,7 @@ services:
         ports:
             - 10004:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
@@ -146,7 +146,7 @@ services:
         ports:
             - 10005:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
@@ -165,7 +165,7 @@ services:
         ports:
             - 10006:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
@@ -184,7 +184,7 @@ services:
         ports:
             - 10007:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
@@ -203,7 +203,7 @@ services:
         ports:
             - 10008:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             service cron start && 
@@ -223,7 +223,7 @@ services:
         ports:
             - 10009:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             service cron start && 
@@ -266,7 +266,7 @@ services:
         ports:
             - 10010:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
@@ -285,7 +285,7 @@ services:
         ports:
             - 10012:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
@@ -304,7 +304,7 @@ services:
         ports:
             - 10013:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             service cron start && 
@@ -323,7 +323,7 @@ services:
         ports:
             - 10015:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             service cron start && 
@@ -342,7 +342,7 @@ services:
         ports:
             - 10016:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             service cron start && 
@@ -361,7 +361,7 @@ services:
         ports:
             - 10020:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             service cron start && 
@@ -380,7 +380,7 @@ services:
         ports:
             - 10021:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
@@ -400,7 +400,7 @@ services:
         ports:
             - 10023:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             service cron start && 
@@ -444,7 +444,7 @@ services:
         ports:
             - 10024:80
         command: bash -c "
-            sleep 40 &&
+            sleep 70 &&
             apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             service cron start && 
