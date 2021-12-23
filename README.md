@@ -37,13 +37,14 @@ The docker-compose.yml manages all the instances, cronjobs, ports
 - NodeJS
 
 ## Installation steps:
-1) ```bash 
+
+```bash 
 git clone https://github.com/justanothern00b/OSWAP
 ```
-2)```bash
+```bash
 cd OSWAP
 ```
-3) ```bash
+```bash
 docker-compose up --build
 ```
 
