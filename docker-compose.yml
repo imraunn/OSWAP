@@ -387,6 +387,16 @@ services:
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
+    level_22:
+        container_name: level_22
+        build:
+            context: ./level_22/
+            dockerfile: Dockerfile
+        ports:
+            - 10022:5000
+        volumes:
+            - ./level_22/src:/app
+            - ./level_22/cron:/root/cron
     
     level_23:
         container_name: level_23
