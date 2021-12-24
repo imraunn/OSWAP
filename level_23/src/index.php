@@ -53,7 +53,7 @@
                         if(!empty($_GET["sl"])){
                             $sl=$_GET["sl"];
 
-                            $con=mysqli_connect("db_level_23","cyber","cyberishere","members") or die(mysql_error());
+                            $con=mysqli_connect("db_level_23","oswap_user","o5wap_u533333rr","members") or die(mysql_error());
 
                             $query=mysqli_query($con,"SELECT * FROM member WHERE SlNo=".$sl);
                             if(mysqli_num_rows($query)!=0){

@@ -38,6 +38,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`username`, `password`) VALUES
 ('admin', '0h_s0_y0u_f0und_m3!');
+
+CREATE USER 'oswap_user'@'%' IDENTIFIED BY 'o5wap_u533333rr';
+GRANT SELECT ON *.* TO 'oswap_user'@'%';
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

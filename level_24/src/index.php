@@ -53,7 +53,7 @@
                         if(!empty($_POST["animal"])){
                             $animal=$_POST["animal"];
                                 
-                            $con=mysqli_connect("db_level_24","cyber","cyberishere","zoo") or die(mysql_error());
+                            $con=mysqli_connect("db_level_24","oswap_user","o5wap_u533333rr","zoo") or die(mysql_error());
 
                             $query=mysqli_query($con,"SELECT * FROM animals WHERE name='".$animal."'");
                             if($query && mysqli_num_rows($query)!=0){

@@ -280,6 +280,10 @@ CREATE TABLE `confidential` (
 
 INSERT INTO `confidential` (`flag`) VALUES
 ('flag{d3mo_flag}');
+
+CREATE USER 'oswap_user'@'%' IDENTIFIED BY 'o5wap_u533333rr';
+GRANT SELECT ON *.* TO 'oswap_user'@'%';
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
