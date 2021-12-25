@@ -51,6 +51,7 @@ flags=gen_flag()
 while(True):
     try:
         mydb=connect_db()
+        break
     except:
         time.sleep(5)
         continue

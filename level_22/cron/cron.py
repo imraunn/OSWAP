@@ -1,4 +1,5 @@
 import mysql.connector
+import time
 
 CHALL_NO = 22
 
@@ -32,8 +33,17 @@ def write_to_file(flag):
 while(True):
     try:
         mydb=connect_db()
+        break
     except:
         time.sleep(5)
         continue
-flag=get_flag(mydb)
-write_to_file(flag)
+
+flag=""
+
+while(True):
+    flag=get_flag(mydb)
+    if not flag=="":
+        write_to_file(flag)
+        break
+    else:
+        time.sleep(5)

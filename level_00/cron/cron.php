@@ -6,6 +6,7 @@
         sleep(5);
 		continue;
 	}
+        echo "CONNECTION SuCCEssFULL";
         $query=mysqli_query($con,"SELECT flag FROM oswap WHERE chall=0");
         $row = mysqli_fetch_array($query);
         $flag=$row['flag'];
