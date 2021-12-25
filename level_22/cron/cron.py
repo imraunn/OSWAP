@@ -29,6 +29,11 @@ def write_to_file(flag):
     f.write(flag)
     f.close()
 
-mydb=connect_db()
+while(True):
+    try:
+        mydb=connect_db()
+    except:
+        time.sleep(5)
+        continue
 flag=get_flag(mydb)
 write_to_file(flag)

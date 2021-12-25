@@ -25,7 +25,7 @@ services:
             PMA_HOST: db_flag
         depends_on:
             - db_flag
-    ##himanshu review this
+    
     python_flag:
         container_name: python_flag
         image: himanshudas75/python-cron:v2
@@ -34,7 +34,6 @@ services:
         volumes:
             - ./python_flag/src:/opt
         command: bash -c "
-            sleep 60 &&
             python /opt/flag_gen.py oswap && 
             service cron start && 
             echo '*/1 * * * * root python /opt/flag_gen.py oswap' >> /etc/crontab && 
@@ -413,7 +412,7 @@ services:
         volumes:
             - ./level_22/src:/app
             - ./level_22/cron:/root/cron
-    ##himanshu review this
+    
     level_23:
         container_name: level_23
         image: himanshudas75/php-apache-mysql-cron:v2
@@ -426,12 +425,11 @@ services:
         ports:
             - 10023:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
-            php /root/cron/cron.php &&
             tail -f /dev/null"
     
     db_level_23:
@@ -457,7 +455,7 @@ services:
             PMA_HOST: db_level_23
         depends_on:
             - db_level_23
-    ##himanshu review this
+    
     level_24:
         container_name: level_24
         image: himanshudas75/php-apache-mysql-cron:v2
@@ -470,12 +468,11 @@ services:
         ports:
             - 10024:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
-            php /root/cron/cron.php &&
             tail -f /dev/null"
     
     db_level_24:

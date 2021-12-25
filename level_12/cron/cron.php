@@ -1,9 +1,9 @@
 <?php
     while ( 1 ) {
-    	sleep(5);
-        echo "Checking if db is up";
+        echo "Checking if db_flag is up";
 	$con=mysqli_connect("db_flag","cyberlabs","CYB3RL4BS_!!FLAgs!","flag_storage");
 	if ( !$con ) {
+        sleep(5);
 		continue;
 	}
         $query=mysqli_query($con,"SELECT flag FROM oswap WHERE chall=12");
