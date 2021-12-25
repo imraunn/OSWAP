@@ -25,7 +25,7 @@ services:
             PMA_HOST: db_flag
         depends_on:
             - db_flag
-    
+    ##himanshu review this
     python_flag:
         container_name: python_flag
         image: himanshudas75/python-cron:v2
@@ -51,10 +51,9 @@ services:
         ports:
             - 10000:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
@@ -70,10 +69,9 @@ services:
         ports:
             - 10001:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
@@ -89,10 +87,9 @@ services:
         ports:
             - 10002:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
@@ -108,10 +105,9 @@ services:
         ports:
             - 10003:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
@@ -127,10 +123,9 @@ services:
         ports:
             - 10004:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
@@ -146,10 +141,9 @@ services:
         ports:
             - 10005:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
@@ -165,10 +159,9 @@ services:
         ports:
             - 10006:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
@@ -184,10 +177,9 @@ services:
         ports:
             - 10007:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
@@ -203,12 +195,11 @@ services:
         ports:
             - 10008:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
-            service cron start && 
-            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab &&
             php /root/cron/cron.php &&
+            apachectl restart && 
+            service cron start && 
+            echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
 
     level_09:
@@ -223,13 +214,14 @@ services:
         ports:
             - 10009:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
-            php /root/cron/cron.php &&
             tail -f /dev/null"
+
+    ##himanshu review this
 
     db_level_09:
         container_name: db_level_09
@@ -266,10 +258,9 @@ services:
         ports:
             - 10010:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
@@ -291,10 +282,9 @@ services:
         ports:
             - 10012:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
@@ -310,12 +300,11 @@ services:
         ports:
             - 10013:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
-            php /root/cron/cron.php &&
             tail -f /dev/null"
 
     level_14:
@@ -335,12 +324,11 @@ services:
         ports:
             - 10015:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
-            php /root/cron/cron.php &&
             tail -f /dev/null"
     
     level_16:
@@ -354,12 +342,11 @@ services:
         ports:
             - 10016:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
-            php /root/cron/cron.php &&
             tail -f /dev/null"
 
     level_17:
@@ -391,12 +378,11 @@ services:
         ports:
             - 10020:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
+            php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
-            php /root/cron/cron.php &&
             tail -f /dev/null"
 
     level_21:
@@ -410,13 +396,13 @@ services:
         ports:
             - 10021:80
         command: bash -c "
-            sleep 70 &&
-            apachectl restart && 
             chmod 640 /root/cron/cron.php && 
             php /root/cron/cron.php &&
+            apachectl restart && 
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
+    ##himanshu review this
     level_22:
         container_name: level_22
         build:
@@ -427,7 +413,7 @@ services:
         volumes:
             - ./level_22/src:/app
             - ./level_22/cron:/root/cron
-    
+    ##himanshu review this
     level_23:
         container_name: level_23
         image: himanshudas75/php-apache-mysql-cron:v2
@@ -471,7 +457,7 @@ services:
             PMA_HOST: db_level_23
         depends_on:
             - db_level_23
-    
+    ##himanshu review this
     level_24:
         container_name: level_24
         image: himanshudas75/php-apache-mysql-cron:v2
