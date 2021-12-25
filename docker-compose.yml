@@ -273,6 +273,12 @@ services:
             service cron start && 
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             tail -f /dev/null"
+    
+    level_11:
+        container_name: level_11
+        image: registry.digitalocean.com/test-cyberlabs/oswap-level-11
+        ports:
+            - 10011:4000
 
     level_12:
         container_name: level_12
@@ -311,7 +317,13 @@ services:
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             php /root/cron/cron.php &&
             tail -f /dev/null"
-    
+
+    level_14:
+        container_name: level_14
+        image: registry.digitalocean.com/test-cyberlabs/oswap-level-14
+        ports:
+            - 10014:4000
+
     level_15:
         container_name: level_15
         image: himanshudas75/php-apache-mysql-cron:v2
@@ -349,7 +361,25 @@ services:
             echo '*/1 * * * * root sleep 2 && php /root/cron/cron.php' >> /etc/crontab && 
             php /root/cron/cron.php &&
             tail -f /dev/null"
-    
+
+    level_17:
+        container_name: level_17
+        image: registry.digitalocean.com/test-cyberlabs/oswap-level-17 
+        ports:
+            - 10017:80
+
+    level_18:
+        container_name: level_18
+        image: registry.digitalocean.com/test-cyberlabs/oswap-level-18
+        ports:
+            - 10018:80
+
+    level_19:
+        container_name: level_19
+        image: registry.digitalocean.com/test-cyberlabs/oswap-level-19
+        ports:
+            - 10019:80
+
     level_20:
         container_name: level_20
         image: himanshudas75/php-apache-mysql-cron:v2
@@ -486,3 +516,15 @@ services:
         depends_on:
             - db_level_24
 
+
+    level_25:
+        container_name: level_25
+        image: registry.digitalocean.com/test-cyberlabs/oswap-level-25
+        ports:
+            - 10025:4000
+
+    mongo:
+        container_name: mongo
+        image: mongo
+        ports:
+            - 27017:27017
