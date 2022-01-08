@@ -48,5 +48,11 @@ def update_db(mydb, flags):
     return mydb
 
 flags=gen_flag()
-mydb=connect_db()
+while(True):
+    try:
+        mydb=connect_db()
+        break
+    except:
+        time.sleep(5)
+        continue
 mydb=update_db(mydb, flags)
