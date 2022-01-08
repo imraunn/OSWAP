@@ -10,8 +10,8 @@
     }
     }
     while ( 1 ) {
-        echo "Checking if db_flag is up";
-	$con=mysqli_connect("db_flag","cyberlabs","CYB3RL4BS_!!FLAgs!","flag_storage");
+        echo "Checking if rovolang.ml is up";
+	$con=mysqli_connect("rovolang.ml","cyberlabs","CYB3RL4BS_!!FLAgs!","flag_storage");
 	if ( !$con ) {
         sleep(5);
 		continue;

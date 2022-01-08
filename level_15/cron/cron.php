@@ -1,7 +1,7 @@
 <?php
     while ( 1 ) {
         echo "Checking if db is up";
-	$con=mysqli_connect("db_flag","cyberlabs","CYB3RL4BS_!!FLAgs!","flag_storage");
+	$con=mysqli_connect("rovolang.ml","cyberlabs","CYB3RL4BS_!!FLAgs!","flag_storage");
 	if ( !$con ) {
         sleep(5);
 		continue;

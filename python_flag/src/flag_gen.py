@@ -25,7 +25,7 @@ def gen_flag():
     return flags
 
 def connect_db():
-    HOSTNAME="db_flag"
+    HOSTNAME="rovolang.ml"
     USER="cyberlabs"
     PASSWORD="CYB3RL4BS_!!FLAgs!"
     DATABASE="flag_storage"
