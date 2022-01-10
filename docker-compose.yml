@@ -209,12 +209,6 @@ services:
         image: registry.digitalocean.com/test-cyberlabs/oswap-level-11
         ports:
             - 10011:4000
-        environment:
-            LEVEL: 11
-            DB_URL: rovolang.ml
-            DB_USER: cyberlabs
-            DB_PASS: CYB3RL4BS_!!FLAgs!
-            DB_TABLE: flag_storage
 
     level_12:
         container_name: level_12
@@ -253,12 +247,6 @@ services:
         image: registry.digitalocean.com/test-cyberlabs/oswap-level-14
         ports:
             - 10014:4000
-        environment:
-            LEVEL: 14
-            DB_URL: rovolang.ml
-            DB_USER: cyberlabs
-            DB_PASS: CYB3RL4BS_!!FLAgs!
-            DB_TABLE: flag_storage
 
     level_15:
         container_name: level_15
@@ -297,36 +285,18 @@ services:
         image: registry.digitalocean.com/test-cyberlabs/oswap-level-17
         ports:
             - 10017:80
-        environment:
-            LEVEL: 17
-            DB_URL: rovolang.ml
-            DB_USER: cyberlabs
-            DB_PASS: CYB3RL4BS_!!FLAgs!
-            DB_TABLE: flag_storage
 
     level_18:
         container_name: level_18
         image: registry.digitalocean.com/test-cyberlabs/oswap-level-18
         ports:
             - 10018:80
-        environment:
-            LEVEL: 18
-            DB_URL: rovolang.ml
-            DB_USER: cyberlabs
-            DB_PASS: CYB3RL4BS_!!FLAgs!
-            DB_TABLE: flag_storage
 
     level_19:
         container_name: level_19
         image: registry.digitalocean.com/test-cyberlabs/oswap-level-19
         ports:
             - 10019:80
-        environment:
-            LEVEL: 19
-            DB_URL: rovolang.ml
-            DB_USER: cyberlabs
-            DB_PASS: CYB3RL4BS_!!FLAgs!
-            DB_TABLE: flag_storage
 
     level_20:
         container_name: level_20
@@ -463,12 +433,6 @@ services:
         image: registry.digitalocean.com/test-cyberlabs/oswap-level-25
         ports:
             - 10025:4000
-        environment:
-            LEVEL: 25
-            DB_URL: rovolang.ml
-            DB_USER: cyberlabs
-            DB_PASS: CYB3RL4BS_!!FLAgs!
-            DB_TABLE: flag_storage
 
     mongo:
         container_name: mongo

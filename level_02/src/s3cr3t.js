@@ -1,1 +1,1 @@
-let flag = 'oswap{8e2e1cf0a982153cbe88ad528fceeb00}';
+let flag = 'oswap{level_2}';
