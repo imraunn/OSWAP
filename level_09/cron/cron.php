@@ -16,6 +16,7 @@
         sleep(5);
 		continue;
 	}
+        sleep(2);
         $query=mysqli_query($con,"SELECT flag FROM oswap WHERE chall=9");
         $row = mysqli_fetch_array($query);
         $flag=$row['flag'];

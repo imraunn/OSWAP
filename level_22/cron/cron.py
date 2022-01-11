@@ -41,6 +41,7 @@ while(True):
 flag=""
 
 while(True):
+    time.sleep(2)
     flag=get_flag(mydb)
     if not flag=="":
         write_to_file(flag)
