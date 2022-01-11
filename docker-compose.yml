@@ -182,7 +182,7 @@ services:
             context: level_22
             dockerfile: Dockerfile
         ports:
-            - 1022:5000
+            - 10022:5000
 
     level_23:
         container_name: level_23
@@ -219,6 +219,7 @@ services:
             context: level_24
             dockerfile: Dockerfile
             target: db
+            
     # level_25:
     #     container_name: level_25
     #     image: registry.digitalocean.com/test-cyberlabs/oswap-level-25

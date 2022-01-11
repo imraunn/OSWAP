@@ -8,6 +8,5 @@ RUN useradd py-app
 RUN chmod -R 755 /app
 RUN chmod -R 640 /root/cron
 EXPOSE 5000
-# CMD ["bash", "/root/cron/sleeper.sh"]
 
 CMD python /root/cron/cron.py && service cron start && sudo -u py-app python /app/services/app.py
