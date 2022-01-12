@@ -142,7 +142,7 @@ services:
         container_name: level_22
         image: registry.digitalocean.com/test-cyberlabs/oswap-level-22
         ports:
-            - 10022:80
+            - 10022:5000
 
     level_23:
         container_name: level_23
