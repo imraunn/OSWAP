@@ -9,4 +9,4 @@ docker kill $(docker ps -a -q)
 docker rm -f $(docker ps -a -q)
 export COMPOSE_PARALLEL_LIMIT=1000
 docker network prune
-docker rmi -f $(docker image ls -a | grep -v 'mysql' | awk {'print $3'})
+docker rmi -f $(docker image ls -a |  grep -vE 'mysql|himanshudas75' | awk {'print $3'})
