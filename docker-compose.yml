@@ -1,5 +1,12 @@
 version: '3.1'
 services:
+    welcome:
+        container_name: welcome
+        build:
+            context: welcome
+            dockerfile: Dockerfile
+        ports:
+            - 80:80
     level_00:
         container_name: level_00
         image: registry.digitalocean.com/test-cyberlabs/oswap-level-00
