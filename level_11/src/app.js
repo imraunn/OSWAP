@@ -88,7 +88,7 @@ app.post('/', async (req, res) => {
             res.cookie('nid', token);
         }
         res.redirect('/');
-    } catch ( err ) {
+    } catch ( error ) {
         console.log(error);
         res.status(500);
         res.send('Internal Server Error');

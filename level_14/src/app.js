@@ -129,19 +129,24 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', async (req, res) => {
-    let decoded = decode(req.body.code);
-    if ( 
-        decoded &&
-        decoded.admin === 'true' &&
-        decoded.guest === 'false' &&
-        decoded.organization === 'cyberlabs'
-    ) {
-        res.render('index', {
-            message: await getFlag()
-	});
-        return;
+    try {
+        let decoded = decode(req.body.code);
+        if ( 
+            decoded &&
+            decoded.admin === 'true' &&
+            decoded.guest === 'false' &&
+            decoded.organization === 'cyberlabs'
+        ) {
+            res.render('index', {
+                message: await getFlag()
+            });
+            return;
+        }
+        res.redirect('/');
+    } catch ( error ) {
+        console.log(error);
+        res.redirect('/');
     }
-    res.redirect('/');
 });
 
 app.listen(process.env.PORT, () => console.log('Listening on', process.env.PORT));
