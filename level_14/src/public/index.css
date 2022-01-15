@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik';
+    font-size: 14px;
+}
+
+:root {
+    --green-color: #66FF00;
+    --grey-color: #111111;
+    --light-grey-color: #353535;
+    --x-light-grey-color: #707070;
+}
+
+body {
+    background-color: var(--grey-color);
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    color: white;
+}
+
+header {
+    border-bottom: solid 1px var(--light-grey-color);
+    padding: 14px 46px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    color: var(--green-color);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.level-title {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.container {
+    max-width: 500px;
+    min-width: 300px;
+}
+
+.container__title {
+    color: var(--green-color);
+    font-weight: 500;
+    padding: 15px 18px;
+    font-size: 15px;
+}
+
+.wrapper {
+    background-color: var(--light-grey-color);
+    padding: 18px 18px 24px;
+    border-radius: 5px;
+}
+
+.wrapper__title {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 14px;
+}
+
+.wrapper__description {
+    margin-bottom: 22px;
+    font-weight: 300;
+    line-height: 1.25;
+}
+
+label {
+    font-weight: 500;
+    padding: 8px 0;
+    display: block;
+}
+
+input[type="text"], select {
+    background-color: transparent;
+    border: solid 1px var(--x-light-grey-color);
+    border-radius: 2px;
+    display: block;
+    width: 100%;
+    padding: 8px;
+    color: white;
+}
+
+input[type="text"]:focus, select:focus {
+    border-color: var(--green-color);
+    outline: 0;
+    color: var(--green-color);
+}
+
+select:focus * {
+    color: black;
+}
+
+.input-group {
+    margin-bottom: 10px;
+}
+
+button[role="submit"] {
+    display: block;
+    background-color: var(--green-color);
+    border: 0;
+    margin-top: 4px;
+    margin-bottom: 18px;
+    padding: 8px 12px;
+    color: black;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+table {
+    width: 100%;
+    border: none;
+}
+
+table * {
+    text-align: center;
+    border: 0;
+}
+
+td, th {
+    width: 25%;
+    padding: .4rem 0;
+    font-weight: 400;
+}
+
+th {
+    background-color: var(--grey-color);
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 14px;
+    }
+
+    .container {
+        padding: 0 14px;
+    }
+}
+
+
+.source {
+    text-align: right;
+    padding-right: 17px;
+    vertical-align: middle;
+}
+
+

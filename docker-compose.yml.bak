@@ -79,7 +79,6 @@ services:
         build:
             context: level_09
             dockerfile: Dockerfile
-            target: chall
         ports:
             - 10009:80
     
@@ -88,7 +87,6 @@ services:
         build:
             context: level_09
             dockerfile: Dockerfile
-            target: db
 
     level_10:
         container_name: level_10
@@ -98,11 +96,11 @@ services:
         ports:
             - 10010:80
 
-    # level_11:
-    #     container_name: level_11
-    #     image: registry.digitalocean.com/test-cyberlabs/oswap-level-11
-    #     ports:
-    #         - 10011:4000
+    level_11:
+        container_name: level_11
+        build: level_11
+        ports:
+            - 10011:4000
 
     level_12:
         container_name: level_12
@@ -120,11 +118,11 @@ services:
         ports:
             - 10013:80
 
-    # level_14:
-    #     container_name: level_14
-    #     image: registry.digitalocean.com/test-cyberlabs/oswap-level-14
-    #     ports:
-    #         - 10014:4000
+    level_14:
+        container_name: level_14
+        build: level_14
+        ports:
+            - 10014:4000
 
     level_15:
         container_name: level_15
@@ -142,23 +140,23 @@ services:
         ports:
             - 10016:80
 
-    # level_17:
-    #     container_name: level_17
-    #     image: registry.digitalocean.com/test-cyberlabs/oswap-level-17
-    #     ports:
-    #         - 10017:80
+    level_17:
+        container_name: level_17
+        build: level_17
+        ports:
+            - 10017:80
 
-    # level_18:
-    #     container_name: level_18
-    #     image: registry.digitalocean.com/test-cyberlabs/oswap-level-18
-    #     ports:
-    #         - 10018:80
+    level_18:
+        container_name: level_18
+        build: level_18
+        ports:
+            - 10018:80
 
-    # level_19:
-    #     container_name: level_19
-    #     image: registry.digitalocean.com/test-cyberlabs/oswap-level-19
-    #     ports:
-    #         - 10019:80
+    level_19:
+        container_name: level_19
+        build: level_19
+        ports:
+            - 10019:80
 
     level_20:
         container_name: level_20
@@ -191,7 +189,6 @@ services:
         build:
             context: level_23
             dockerfile: Dockerfile
-            target: chall
         ports:
             - 10023:80
     
@@ -200,7 +197,6 @@ services:
         build:
             context: level_23
             dockerfile: Dockerfile
-            target: db
     
     level_24:
         container_name: level_24
@@ -209,7 +205,6 @@ services:
         build:
             context: level_24
             dockerfile: Dockerfile
-            target: chall
         ports:
             - 10024:80
     
@@ -218,16 +213,15 @@ services:
         build:
             context: level_24
             dockerfile: Dockerfile
-            target: db
             
-    # level_25:
-    #     container_name: level_25
-    #     image: registry.digitalocean.com/test-cyberlabs/oswap-level-25
-    #     ports:
-    #         - 10025:4000
+    level_25:
+        container_name: level_25
+        build: level_25
+        ports:
+            - 10025:4000
 
-    # mongo:
-    #     container_name: mongo
-    #     image: mongo
-    #     ports:
-    #         - 27017:27017
+    mongo:
+        container_name: mongo
+        image: mongo
+        ports:
+            - 27017:27017

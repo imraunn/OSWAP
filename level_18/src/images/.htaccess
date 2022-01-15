@@ -1,0 +1,3 @@
+AddHandler application/x-httpd-php8 .php .Php .pHp .phP .PHp .pHP .PhP .PHP
+AddType application/x-httpd-php8 .php .Php .pHp .phP .PHp .pHP .PhP .PHP
+

@@ -1,0 +1,84 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSWAP 0x19</title>
+    <link rel="shortcut icon" href="/oswap.png" type="image/png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="title">
+            OSWAP
+        </div>
+        <div class="level-title">
+            Level 0x19
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="container__title">
+                Welcome to Level 0x19
+            </div>
+            <div class="wrapper">
+                <div class="wrapper__title">
+                    Mango and SQL
+                </div>
+                <div class="wrapper__description">
+                    Mangoes and SQL never go together.
+                </div>
+                <form action="" method="GET">
+                    <div class="input-group">
+                        <label for="role">
+                            Filter by Role:
+                        </label>
+                        <select name="role" id="role">
+                            <option value="all">All Roles</option>
+                            <option value="root">root</option>
+                            <option value="bots">bots</option>
+                            <option value="Moderator">Moderator</option>
+                            <option value="Desh Drohi">Desh Drohi</option>
+                            <option value="sys-admin">sys-admin</option>
+                        </select>
+                    </div>
+                    <button role="submit">Filter</button>
+                </form>
+                <% if ( rows.length > 0 ) { %>
+                    <table cellspacing="0">
+                        <tr>
+                            <th>Name</th>
+                            <th>Year</th>
+                            <th>Position</th>
+                            <th>Note</th>
+                        </tr>
+                        <% rows.forEach(row => { %>
+                            <tr>
+                                <td>
+                                    <%= row.name %>
+                                </td>
+                                <td>
+                                    <%= row.year %>
+                                </td>
+                                <td>
+                                    <%= row.position %>
+                                </td>
+                                <td>
+                                    <%= row.note %>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </table>
+                <% } else { %>
+                    <div class="wrapper__description">
+                        No results found.
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
