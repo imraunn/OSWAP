@@ -68,10 +68,6 @@
                         
                     ?>
                 </div>
-                </form>
-
-                <div class="onclick">
-                </div>
 
             </div>
         </div>

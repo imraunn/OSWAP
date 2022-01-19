@@ -37,7 +37,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSWAP 0x14</title>
+    <title>OSWAP 0xe</title>
     <link rel="shortcut icon" href="oswap.png" type="image/png">
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -51,13 +51,13 @@
             OSWAP
         </div>
         <div class="level-title">
-            Level 0x14
+            Level 0xe
         </div>
     </header>
     <main>
         <div class="container">
             <div class="container__title">
-                Welcome to Level 0x14
+                Welcome to Level 0xe
             </div>
             <div class="wrapper">
                 <div class="wrapper__title">
