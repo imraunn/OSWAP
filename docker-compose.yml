@@ -101,7 +101,7 @@ services:
         container_name: level_14
         image: registry.digitalocean.com/test-cyberlabs/oswap-level-14
         ports:
-            - 10014:4000
+            - 10014:80
 
     level_15:
         container_name: level_15
@@ -137,7 +137,7 @@ services:
         container_name: level_20
         image: registry.digitalocean.com/test-cyberlabs/oswap-level-20
         ports:
-            - 10020:80
+            - 10020:4000
 
     level_21:
         container_name: level_21
