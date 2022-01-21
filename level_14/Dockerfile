@@ -1,12 +1,8 @@
-FROM alpine
-RUN apk update
-RUN apk add nodejs npm php8 php8-mysqli
-WORKDIR /usr/app
-COPY ./cron /root
-RUN chmod 640 /root/cron.php
-RUN echo '*/15 * * * * php8 /root/cron.php' >> /etc/crontabs/root
-COPY package*.json ./
-RUN npm install
+FROM himanshudas75/php-apache-mysql-cron:v2
+WORKDIR /var/www/html
+COPY ./cron /root/cron
 COPY ./src .
-EXPOSE 4000
-CMD php8 /root/cron.php && crond -b  && npm run start
+RUN chmod 640 /root/cron/cron.php
+RUN echo '*/15 * * * * root php /root/cron/cron.php' >> /etc/crontab
+EXPOSE 80
+CMD chown -R root:root /var/www/html && chmod -R 755 /var/www/html && php /root/cron/cron.php && service cron start && apachectl restart && tail -f /dev/null

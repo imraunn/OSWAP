@@ -7,6 +7,7 @@ services:
             dockerfile: Dockerfile
         ports:
             - 80:80
+
     level_00:
         container_name: level_00
         build:
@@ -127,9 +128,11 @@ services:
 
     level_14:
         container_name: level_14
-        build: level_14
+        build:
+            context: level_14
+            dockerfile: Dockerfile
         ports:
-            - 10014:4000
+            - 10014:80
 
     level_15:
         container_name: level_15
