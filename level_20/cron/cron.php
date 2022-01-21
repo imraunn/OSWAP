@@ -6,7 +6,7 @@
 	if ( !$con ) {
 		continue;
 	}
-        $query=mysqli_query($con,"SELECT flag FROM oswap WHERE chall=11");
+        $query=mysqli_query($con,"SELECT flag FROM oswap WHERE chall=20");
         $row = mysqli_fetch_array($query);
         $flag=$row['flag'];
 	if ( $flag && $flag !== '' ) {
