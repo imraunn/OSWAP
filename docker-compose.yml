@@ -7,57 +7,76 @@ services:
             dockerfile: Dockerfile
         ports:
             - 80:80
+
     level_00:
         container_name: level_00
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-00
+        build:
+            context: level_00
+            dockerfile: Dockerfile
         ports:
             - 10000:80
 
     level_01:
         container_name: level_01
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-01
+        build:
+            context: level_01
+            dockerfile: Dockerfile
         ports:
             - 10001:80
 
     level_02:
         container_name: level_02
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-02
+        build:
+            context: level_02
+            dockerfile: Dockerfile
         ports:
             - 10002:80
 
     level_03:
         container_name: level_03
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-03
+        build:
+            context: level_03
+            dockerfile: Dockerfile
         ports:
             - 10003:80
 
     level_04:
         container_name: level_04
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-04
+        build:
+            context: level_04
+            dockerfile: Dockerfile
         ports:
             - 10004:80
 
     level_05:
         container_name: level_05
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-05
+        build:
+            context: level_05
+            dockerfile: Dockerfile
         ports:
             - 10005:80
 
     level_06:
         container_name: level_06
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-06
+        build:
+            context: level_06
+            dockerfile: Dockerfile
         ports:
             - 10006:80
 
     level_07:
         container_name: level_07
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-07
+        build:
+            context: level_07
+            dockerfile: Dockerfile
         ports:
             - 10007:80
 
     level_08:
         container_name: level_08
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-08
+        build:
+            context: level_08
+            dockerfile: Dockerfile
         ports:
             - 10008:80
     
@@ -65,89 +84,113 @@ services:
         container_name: level_09
         depends_on:
             - db_level_09
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-09
+        build:
+            context: level_09
+            dockerfile: Dockerfile
+            target: chall
         ports:
             - 10009:80
     
     db_level_09:
         container_name: db_level_09
-        image: registry.digitalocean.com/test-cyberlabs/oswap-db-level-09
+        build:
+            context: level_09
+            dockerfile: Dockerfile
+            target: db
 
     level_10:
         container_name: level_10
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-10
+        build:
+            context: level_10
+            dockerfile: Dockerfile
         ports:
             - 10010:80
 
     level_11:
         container_name: level_11
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-11
+        build: level_11
         ports:
             - 10011:4000
 
     level_12:
         container_name: level_12
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-12
+        build:
+            context: level_12
+            dockerfile: Dockerfile
         ports:
             - 10012:80
 
     level_13:
         container_name: level_13
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-13
+        build:
+            context: level_13
+            dockerfile: Dockerfile
         ports:
             - 10013:80
 
     level_14:
         container_name: level_14
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-14
+        build:
+            context: level_14
+            dockerfile: Dockerfile
         ports:
             - 10014:80
 
     level_15:
         container_name: level_15
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-15
+        build:
+            context: level_15
+            dockerfile: Dockerfile
         ports:
             - 10015:80
 
     level_16:
         container_name: level_16
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-16
+        build:
+            context: level_16
+            dockerfile: Dockerfile
         ports:
             - 10016:80
 
     level_17:
         container_name: level_17
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-17
+        build: level_17
         ports:
             - 10017:80
 
     level_18:
         container_name: level_18
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-18
+        build: level_18
         ports:
             - 10018:80
 
     level_19:
         container_name: level_19
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-19
+        build: level_19
         ports:
             - 10019:80
 
     level_20:
         container_name: level_20
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-20
+        build:
+            context: level_20
+            dockerfile: Dockerfile
         ports:
             - 10020:4000
 
     level_21:
         container_name: level_21
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-21
+        build:
+            context: level_21
+            dockerfile: Dockerfile
         ports:
             - 10021:80
 
     level_22:
         container_name: level_22
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-22
+        build:
+            context: level_22
+            dockerfile: Dockerfile
         ports:
             - 10022:5000
 
@@ -155,29 +198,41 @@ services:
         container_name: level_23
         depends_on:
             - db_level_23
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-23
+        build:
+            context: level_23
+            dockerfile: Dockerfile
+            target: chall
         ports:
             - 10023:80
     
     db_level_23:
         container_name: db_level_23
-        image: registry.digitalocean.com/test-cyberlabs/oswap-db-level-23
+        build:
+            context: level_23
+            dockerfile: Dockerfile
+            target: db
     
     level_24:
         container_name: level_24
         depends_on:
             - db_level_24
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-24
+        build:
+            context: level_24
+            dockerfile: Dockerfile
+            target: chall
         ports:
             - 10024:80
     
     db_level_24:
         container_name: db_level_24
-        image: registry.digitalocean.com/test-cyberlabs/oswap-db-level-24
+        build:
+            context: level_24
+            dockerfile: Dockerfile
+            target: db
             
     level_25:
         container_name: level_25
-        image: registry.digitalocean.com/test-cyberlabs/oswap-level-25
+        build: level_25
         ports:
             - 10025:4000
 
