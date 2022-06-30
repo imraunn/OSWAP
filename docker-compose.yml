@@ -1,5 +1,12 @@
 version: '3.1'
 services:
+    welcome:
+        image: php:8.0-apache
+        volumes:
+            - ./welcome:/var/www/html/
+        ports:
+            - '9999:80'
+
     db_flag:
         container_name: db_flag
         image: mysql
